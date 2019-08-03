@@ -53,7 +53,9 @@ echo $trimmed_content;
 
       </div> <!-- category_content  -->
 
+<aside class="category_sidebar widgets">
 <?php get_sidebar(); ?>
+</aside>
 
      </div>
     </div>

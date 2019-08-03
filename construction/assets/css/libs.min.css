@@ -3543,7 +3543,7 @@ text-decoration: underline;
   background-color: black;
 }
 
-.search-form {
+.search-form_top {
   display: none;
   position: absolute;
   top: 100%;

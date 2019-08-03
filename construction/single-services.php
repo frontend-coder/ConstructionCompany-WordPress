@@ -15,9 +15,7 @@ get_header();
 
         <article class="post_item">
          <div class="single-thumb">
-          <a href="#">
           	<?php echo get_the_post_thumbnail( $post->ID, 'single-thamb'); ?>
-          </a>
          </div>
          <div class="single_text">
 
@@ -33,25 +31,15 @@ get_header();
     ?>
 
        </div> <!-- end post_box  -->
-
-<!-- begin comments form  -->
-
-
       </div> <!-- category_content  -->
-
-
-     <?php get_sidebar();
-?>
-
+<aside class="category_sidebar widgets">
+<?php get_sidebar(); ?>
+</aside>
      </div>
     </div>
    </div>
   </section>
  </main>
-
-
-
-
 <?php
 get_footer();
 ?>

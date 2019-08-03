@@ -11,7 +11,10 @@
 ?>
 
  <footer>
-  <div class="footer_top_fon" style="background-image: url('img/footer-fon.jpg');
+        <?php $fotter_fon = get_field('fotter_fon', 'option');
+        if($fotter_fon) :
+          ?>
+  <div class="footer_top_fon" style="background-image: url('<?php echo esc_url($fotter_fon[url]); ?>');
 ">
    <div class="container">
     <div class="row">
@@ -91,6 +94,7 @@
     </div>
    </div>
   </div>
+    <?php endif; ?>
   <div class="footer_bottom">
    <ul>
     <li> Copyright 2019</li>

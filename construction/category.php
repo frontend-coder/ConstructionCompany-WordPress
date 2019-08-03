@@ -49,9 +49,9 @@ echo $trimmed_content;
 <?php endif; // end if
 ?>
       </div> <!-- category_content  -->
-
+<aside class="category_sidebar widgets">
 <?php get_sidebar(); ?>
-
+</aside>
      </div>
     </div>
    </div>

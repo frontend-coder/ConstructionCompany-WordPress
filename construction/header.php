@@ -104,7 +104,7 @@
         if($header_logotype) :
           ?>
      <div class="top_logo">
-      <img src="<?php echo esc_html($header_logotype[url]); ?>" alt="<?php echo esc_html($header_logotype[alt]); ?>">
+     <a href="<?php echo home_url( '/' ); ?>"> <img src="<?php echo esc_html($header_logotype[url]); ?>" alt="<?php echo esc_html($header_logotype[alt]); ?>"></a>
      </div>
        <?php endif; ?>
 
@@ -125,7 +125,7 @@
      <div class='be-search'>
       <div class="searchbutton">
       </div>
-      <div class="search-form">
+      <div class="search-form_top">
        <form role="search" id="searchform" action="<?php echo home_url( '/' ); ?>" class="searchform" method="get">
         <input id="s" class="searchbar" name="s" placeholder="Введите запрос" type="search" x-webkit-speech="true">
         <input class="searchsubmit" name="submit" type="submit" value="Найти">

@@ -3532,7 +3532,7 @@ ul {
   background-color: black;
 }
 
-.search-form {
+.search-form_top {
   display: none;
   position: absolute;
   top: 100%;
@@ -4566,6 +4566,7 @@ ul {
 .category_sidebar {
   width: 25%;
   float: left;
+  float: right;
 }
 
 .post_box {
@@ -4582,7 +4583,8 @@ ul {
   float: left;
   width: 40%;
 }
-
+.post_box .post_item .post-thumb img,
+.post_box .post_item .single-thumb img,
 .post_box .post_item .single-thumb a img,
 .post_box .post_item .post-thumb a img {
   display: block;
@@ -4772,6 +4774,12 @@ color: #fff;
 }
 .pn_center {display: inline-block;}
 
+
+
+
+
+
+
 .category_sidebar .widget {
   width: 100%;
   margin-bottom: 30px;
@@ -4809,7 +4817,7 @@ color: #fff;
   color: #666;
   text-decoration: none;
 }
-
+.search-form,
 .category_sidebar .widget .searchform {
   padding: 0;
   margin: 0;
@@ -4818,7 +4826,13 @@ color: #fff;
   display: -ms-flexbox;
   display: flex;
 }
-
+.search-form .screen-reader-text {
+display: none;
+}
+.search-form label {
+ width: 60%;
+  }
+ .search-form label .search-field,
 .category_sidebar .widget .searchform .submit_input {
   width: 60%;
   height: 40px;
@@ -4826,7 +4840,10 @@ color: #fff;
   border-right: none;
   text-indent: 5px;
 }
-
+.search-form label .search-field {
+  width: 100%;
+}
+.search-form .search-submit,
 .category_sidebar .widget .searchform .submit {
   width: 40%;
   height: 40px;
@@ -4846,6 +4863,30 @@ color: #fff;
   text-align: center;
   margin-bottom: 30px;
 }
+
+/*
+оформляю виджеты в боковом сайдбаре */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .error_fs {
   display: -webkit-box;

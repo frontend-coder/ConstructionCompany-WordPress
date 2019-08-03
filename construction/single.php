@@ -22,9 +22,7 @@ get_header();
 
         <article class="post_item">
          <div class="single-thumb">
-          <a href="#">
           	<?php echo get_the_post_thumbnail( $post->ID, 'single-thamb'); ?>
-          </a>
          </div>
          <div class="single_text">
 
@@ -188,10 +186,10 @@ get_header();
 
       </div> <!-- category_content  -->
 
-
+<aside class="category_sidebar widgets">
      <?php get_sidebar();
 ?>
-
+</aside>
      </div>
     </div>
    </div>
