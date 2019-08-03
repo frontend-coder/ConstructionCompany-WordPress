@@ -4704,7 +4704,7 @@ ul {
   background-color: #E6E8EB;
   color: #A9ADB2;
 }
-
+.paginati_castomtype,
 .pagination .page-numbers {
   width: 30px;
   height: 30px;
@@ -4720,13 +4720,57 @@ ul {
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
-
+.paginati_castomtype,
 .pagination .current,
 .pagination .current:hover,
 .pagination .page-numbers:hover {
   background-color: #ffcb0f;
   color: #fff;
 }
+
+
+.paginati_castomtype .page-numbers li{
+display: inline-block;
+}
+
+.page-numbers li {
+  margin-right: 5px;
+}
+.page-numbers li span,
+.page-numbers li a{
+ width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  background-color: #fff;
+  text-decoration: none;
+  color: #6a6a6a;
+  border: 1px solid #ffcb0f;
+  -webkit-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+.page-numbers li a:hover,
+.page-numbers li span {
+   background-color:  #ffcb0f;
+color: #fff;
+}
+
+.page-numbers {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  text-align: center;
+}
+
+.pn_wrapper {
+  text-align: center;
+}
+.pn_center {display: inline-block;}
 
 .category_sidebar .widget {
   width: 100%;

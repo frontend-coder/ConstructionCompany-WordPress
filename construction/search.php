@@ -1,55 +1,89 @@
 <?php
 /**
- * The template for displaying search results pages
+ * The template for displaying archive pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package construction
  */
 
-get_header();
+get_header(); ?>
+
+ <main>
+  <section class="block ">
+   <div class="container">
+    <div class="row">
+     <div class="category_wrap clearfix">
+      <div class="category_content">
+       <div class="post_box">
+
+
+<article class="post_item clearfix">
+
+  <h3 class="pagesearch_title">Сформируйте ваш поисковый запрос иначе</h3>
+
+  <form role="search" method="get" id="searchform" class="error_fs" action="<?php echo home_url( '/' ); ?>" >
+    <input class="text-search" type="search" value="" name="s" id="s" placeholder="Введите запрос..." onfocus="if (this.value == 'Введите запрос...') { this.value = 'Введите запрос..'; }" onblur="if(this.value == 'Введите запрос..') { this.value = 'Введите запрос...'; }" value="Введите запрос...">
+    <button type="submit" id="searchsubmit" name="submit" class="submit-search" >поиск</button>
+  </form>
+
+ <h6 class="search_rezzult">
+
+  <?php
+    $allsearch = new WP_Query();
+    $allsearch -> query(array( 's' => $s, 'showposts' => '-1', 'posts_per_page' => 3 ));
+    $key = wp_specialchars($s, 1);
+    $count = $allsearch->post_count;
+    echo( 'Получен '.$count. ' ответ(а) по запросу: <span>'.$key.'</span>' );
+    wp_reset_query();
+  ?>
+</h6>
+
+
+</article>
+
+
+
+  <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
+        <article class="post_item clearfix">
+         <div class="post-thumb">
+          <a href="<?php the_permalink(); ?>">
+          	<?php echo get_the_post_thumbnail( $post->ID, 'category-thamb'); ?>
+          </a>
+         </div>
+
+         <div class="post_text">
+          <h2> <?php the_title(); ?></h2>
+          <?php
+$content = get_the_excerpt();// или get_the_content()
+$trimmed_content = wp_trim_words( $content, 26, '' );
+echo $trimmed_content;
+?>
+          <a class="read_more" href="<?php the_permalink(); ?>">прочесть</a>
+         </div>
+        </article>
+
+<?php endwhile; // end while ?>
+
+       </div> <!-- end post_box  -->
+       <!-- Pagination -->
+       <nav class="pagination">
+       	<?php pagination(); // пагинация, функция нах-ся в function.php ?>
+       </nav>
+    <?php else: // иначе вывести то что после оператора вставишь
 ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+<p><?php _e('Извините. но постов нет в этой рубрике.'); ?></p>
+<?php endif; // end if
+?>
+      </div> <!-- category_content  -->
 
-		<?php if ( have_posts() ) : ?>
+<?php get_sidebar(); ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'construction' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+     </div>
+    </div>
+   </div>
+  </section>
+ </main>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>

@@ -153,37 +153,46 @@ get_header();
    <div class="container">
     <div class="row_person">
 
-     <div class="services_items">
-      <div class="services_img">
-       <img src="img/services_1.jpg" class="img-responsive" alt="это первый пост">
-      </div>
-      <div class="services_title"> Управление проектом
-      </div>
-      <div class="services_text"> Далеко-далеко за словесными горами в нашей стране, tggf гласных и согласных живут рыбные тексты. Которое коварный продолжил силуэт, великий которой парадигматическая себя деревни она! Управление проектом
-      </div>
-      <a href="#" class="wellcome_link">узнать более</a>
-     </div>
 
+<!-- // начало  -->
+<?php
+$args = array(
+  'numberposts' => 3,
+  'post_type'   => 'services',
+  'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+);
+$posts = get_posts( $args );
+foreach($posts as $post){ setup_postdata($post);
+    // вставить разметку поста
+?>
      <div class="services_items">
       <div class="services_img">
-       <img src="img/services_2.jpg" class="img-responsive" alt="это первый пост">
+       <?php $thumbnail_id = get_post_thumbnail_id( $post->ID );
+             $image_title = get_the_title($thumbnail_id);
+             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+       the_post_thumbnail('services-thamb',
+        array( 'alt' => $alt,
+       'class'=>'img-responsive',
+      'title'   => $image_title
+           )); ?>
       </div>
-      <div class="services_title"> Управление проектом
+      <div class="services_title"> <?php the_title(); ?>
       </div>
-      <div class="services_text"> Далеко-далеко за словесными горами в нашей стране, tggf гласных и согласных живут рыбные тексты. Которое коварный продолжил силуэт, великий которой парадигматическая себя деревни она! Управление проектом
+      <div class="services_text">          <?php
+$content = get_the_excerpt();// или get_the_content()
+$trimmed_content = wp_trim_words( $content, 15, '' );
+echo $trimmed_content;
+?>
       </div>
-      <a href="#" class="wellcome_link">узнать более</a>
+      <a href="<?php the_permalink(); ?>" class="wellcome_link">узнать более</a>
      </div>
-     <div class="services_items">
-      <div class="services_img">
-       <img src="img/services_3.jpg" class="img-responsive" alt="это первый пост">
-      </div>
-      <div class="services_title"> Управление проектом
-      </div>
-      <div class="services_text"> Далеко-далеко за словесными горами в нашей стране, tggf гласных и согласных живут рыбные тексты. Которое коварный продолжил силуэт, великий которой парадигматическая себя деревни она! Управление проектом
-      </div>
-      <a href="#" class="wellcome_link">узнать более</a>
-     </div>
+<?php
+}
+wp_reset_postdata(); // сброс
+?>
+<!-- // конец  -->
+
+
     </div>
    </div>
   </section>
@@ -206,37 +215,59 @@ get_header();
      <?php endif; ?>
      <div class="reviews_block">
 
+
+<!-- // начало  -->
+<?php
+$args = array(
+  'numberposts' => 3,
+  'post_type'   => 'testimonial',
+  'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+);
+$posts = get_posts( $args );
+foreach($posts as $post){ setup_postdata($post);
+    // вставить разметку поста
+?>
       <div class="reviews_block_items">
        <div class="reviews_block_content">
-        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Щеке если приставка страну, большого, образ подзаголовок. Своего безопасную жизни прямо, строчка сбить она проектах запятых силуэт от всех, даже, семь?
+  <?php
+$content = get_the_excerpt();// или get_the_content()
+$trimmed_content = wp_trim_words( $content, 30, '' );
+echo $trimmed_content;
+?>
        </div>
        <div class="reviews_block_info">
-        <img src="img/rewuer_1.jpg" alt="отзыв одного человека">
-        <div class="reviews_block_name">олег крисбо</div>
+
+       <?php $thumbnail_id = get_post_thumbnail_id( $post->ID );
+             $image_title = get_the_title($thumbnail_id);
+             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+       the_post_thumbnail('review-thamb',
+        array( 'alt' => $alt,
+      'title'   => $image_title
+           )); ?>
+
+        <div class="reviews_block_name"><?php the_title(); ?></div>
        </div>
       </div>
-      <div class="reviews_block_items">
-       <div class="reviews_block_content reviews_block_content_main">
-        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Щеке если приставка страну, большого, образ подзаголовок. Своего безопасную жизни прямо, строчка сбить она проектах запятых силуэт от всех, даже, семь?
-       </div>
-       <div class="reviews_block_info">
-        <img src="img/rewuer_2.jpg" alt="отзыв одного человека">
-        <div class="reviews_block_name">олег крисбо</div>
-       </div>
-      </div>
-      <div class="reviews_block_items">
-       <div class="reviews_block_content">
-        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Щеке если приставка страну, большого, образ подзаголовок. Своего безопасную жизни прямо, строчка сбить она проектах запятых силуэт от всех, даже, семь?
-       </div>
-       <div class="reviews_block_info">
-        <img src="img/rewuer_1.jpg" alt="отзыв одного человека">
-        <div class="reviews_block_name">олег крисбо</div>
-       </div>
-      </div>
+
+<?php
+}
+wp_reset_postdata(); // сброс
+?>
+<!-- // конец  -->
      </div>
     </div>
     <div class="all_adwice">
-     <a href="#" class="wellcome_link">все отзывы</a>
+
+        <?php $adwice_links = get_field('adwice_links');
+        if($adwice_links) :
+          ?>
+          <div class="about_us_descr">
+
+     <a href="<?php echo esc_url($adwice_links[url]); ?>" title="<?php echo esc_html($adwice_links[alt]); ?>" class="wellcome_link">все отзывы</a>
+        <?php endif; ?>
+
+
+
     </div>
    </div>
   </section>

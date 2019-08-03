@@ -124,6 +124,7 @@ require  get_template_directory() . '/functions/including-style.php';
 require  get_template_directory() . '/functions/asf-options.php';
 require  get_template_directory() . '/functions/function-pagination.php' ;
 require  get_template_directory() . '/functions/custom-thamb.php' ;
+require  get_template_directory() . '/functions/custom-type.php' ;
 /**
  * Тестирование :
 <!--

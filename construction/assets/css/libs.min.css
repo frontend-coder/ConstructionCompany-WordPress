@@ -4229,6 +4229,13 @@ text-decoration: underline;
 .services_img {
   margin-bottom: 30px;
 }
+.services_img img {
+display: block;
+width: 100%;
+height: auto;
+}
+
+
 
 .services_items {
   width: 32%;
@@ -4331,6 +4338,7 @@ text-decoration: underline;
   height: 81px;
   display: block;
   margin: 0 auto 20px;
+  border-radius: 50%;
 }
 
 .reviews_block_name {

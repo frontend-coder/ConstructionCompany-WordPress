@@ -126,9 +126,9 @@
       <div class="searchbutton">
       </div>
       <div class="search-form">
-       <form action="/search" class="searchform" method="get">
-        <input class="searchbar" name="s" placeholder="Введите запрос" type="text" x-webkit-speech="true">
-        <input class="searchsubmit" type="submit" value="Найти">
+       <form role="search" id="searchform" action="<?php echo home_url( '/' ); ?>" class="searchform" method="get">
+        <input id="s" class="searchbar" name="s" placeholder="Введите запрос" type="search" x-webkit-speech="true">
+        <input class="searchsubmit" name="submit" type="submit" value="Найти">
        </form>
       </div>
      </div>

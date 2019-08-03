@@ -1,4 +1,20 @@
 <?php
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Добавление кнопки разрыва страницы в Виз.Редактор TyniMCE
 add_filter('mce_buttons', 'mce_page_break');
 function mce_page_break( $mce_buttons ){
