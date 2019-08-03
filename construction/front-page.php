@@ -1,6 +1,6 @@
 <?php
 /**
-Template Name: test tamplate
+Template Name: main-page-tamplate
 **/
 get_header();
 ?>
@@ -15,39 +15,95 @@ get_header();
 
 
  <main>
-  <section class="header_buner" style="background-image: url('img/fon-header.jpg');">
+    <?php $main_header_fon = get_field('main_header_fon');
+        if($main_header_fon) :
+          ?>
+
+
+  <section class="header_buner" style="background-image: url('<?php echo esc_url($main_header_fon[url]); ?>');">
    <div class="container">
     <div class="row">
      <div class="header_buner_inn">
       <div class="header_buner_container">
-       <h2> мы сертифицированные инженеры </h2>
-       <h1> услуги по строительству <span>креатив и профессионализм </span> </h1>
-       <h3> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Родного пустился свой, буквоград своего! Предложения сих на берегу своих злых маленький меня города! </h3>
+          <?php $main_header_pred = get_field('main_header_pred');
+        if($main_header_pred) :
+          ?>
+       <h2> <?php echo esc_html($main_header_pred); ?> </h2>
+  <?php endif; ?>
+          <?php $main_header_utp = get_field('main_header_utp');
+        if($main_header_utp) :
+          ?>
+       <h1> <?php echo $main_header_utp; ?> </h1>
+  <?php endif; ?>
+
+     <?php $main_header_desc = get_field('main_header_desc');
+        if($main_header_desc) :
+          ?>
+       <h3> <?php echo esc_html($main_header_desc); ?> </h3>
+  <?php endif; ?>
+
        <div class="header_buner_buttons">
-        <a href="#" class="wellcome_link">узнать более</a>
-        <a href="#" class="wellcome_link">больше о проекте</a>
+     <?php $main_header_button_one = get_field('main_header_button_one');
+        if($main_header_button_one) :
+          ?>
+        <a href="<?php echo $main_header_button_one[url]; ?>" title="<?php echo $main_header_button_one[title]; ?>" class="wellcome_link">узнать более</a>
+  <?php endif; ?>
+
+       <?php $main_header_button_two = get_field('main_header_button_two');
+        if($main_header_button_two) :
+          ?>
+        <a href="<?php echo $main_header_button_two[url]; ?>" title="<?php echo $main_header_button_two[title]; ?>"class="wellcome_link">больше о проекте</a>
+  <?php endif; ?>
+
        </div>
       </div>
      </div>
     </div>
    </div>
   </section>
+     <?php endif; ?>
+
+
+
+
   <section cass="block_well">
    <div class="container">
     <div class="row_wellcome">
      <div class="wellcome_left">
-      <div class="wellcome_title">добро пожаловать </div>
-      <div class="wellcome_descr"> Далеко-далеко за словесными горами в стране
-      </div>
+           <?php $wellcom_title = get_field('wellcom_title');
+        if($wellcom_title) :
+          ?>
+      <div class="wellcome_title"><?php echo esc_html($wellcom_title); ?></div>
+        <?php endif; ?>
+           <?php $wellcom_descr = get_field('wellcom_descr');
+        if($wellcom_descr) :
+          ?>
+      <div class="wellcome_descr"> <?php echo esc_html($wellcom_descr); ?> </div>
+<?php endif; ?>
+           <?php $wellcom_text = get_field('wellcom_text');
+        if($wellcom_text) :
+          ?>
       <div class="wellcome_text">
-       <p> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Свое от всех безопасную ему образ страну, ты он на берегу встретил толку? Путь там осталось над рекламных, она за своего жизни даже ему, если послушавшись! </p>
-       <p> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Свое от всех безопасную ему образ страну, ты он на берегу встретил толку? Путь там осталось над рекламных, она за своего жизни даже ему, если послушавшись! </p>
+       <?php echo ($wellcom_text); ?>
       </div>
-      <a href="#" class="wellcome_link">узнать более</a>
+      <?php endif; ?>
+           <?php $wellcom_button = get_field('wellcom_button');
+        if($wellcom_button) :
+          ?>
+      <a href="<?php echo esc_url($wellcom_button[url]); ?>" title="<?php echo esc_html($wellcom_button[alt]); ?>" class="wellcome_link">узнать более</a>
+      <?php endif; ?>
      </div>
      <div class="wellcome_right">
-      <div class="wellcome_right_img">
-       <div class="wellcome_right_imgman" style=" background-image: url('img/wellcome-top.png');"></div>
+           <?php $wellcome_under = get_field('wellcome-under');
+        if($wellcome_under) :
+          ?>
+      <div class="wellcome_right_img" style="background-image: url('<?php echo esc_url($wellcome_under[url]); ?>');">
+      <?php endif; ?>
+         <?php $wellcome_top = get_field('wellcome_top');
+        if($wellcome_top) :
+          ?>
+       <div class="wellcome_right_imgman" style=" background-image: url('<?php echo esc_url($wellcome_top[url]); ?>');"></div>
+             <?php endif; ?>
       </div>
      </div>
     </div>
@@ -55,56 +111,38 @@ get_header();
   </section>
   <section class="block_choose">
    <div class="container">
-    <div class="block_title">почему мы</div>
-    <div class="block_descr"> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Которой на берегу даже несколько, гор пор собрал себя предложения родного! Рукописи пунктуация это дал повстречался подпоясал, одна текст правилами рукопись инициал текста до продолжил взобравшись использовало, сих, но оксмокс свой.
-    </div>
+         <?php $choose_title = get_field('choose_title');
+        if($choose_title) :
+          ?>
+    <div class="block_title"><?php echo esc_html($choose_title); ?></div>
+<?php endif; ?>
+       <?php $choose_descr = get_field('choose_descr');
+        if($choose_descr) :
+          ?>
+    <div class="block_descr"> <?php echo esc_html($choose_descr); ?> </div>
+<?php endif; ?>
     <div class="row_person">
+          <?php while( has_sub_field('choose_dovods') ):
+          $choose_dovods_icons = get_sub_field('choose_dovods_icons');
+          $choose_dovods_name = get_sub_field('choose_dovods_name');
+          $choose_dovods_text = get_sub_field('choose_dovods_text');
+          ?>
      <div class="choose_item">
       <div class="choose_item_icon">
-       <i class="fa fa-envira" aria-hidden="true"></i>
+       <i class="<?php echo esc_html($choose_dovods_icons); ?>" aria-hidden="true"></i>
       </div>
       <div class="choose_item_title">
-       работаем качественно
+       <?php echo esc_html($choose_dovods_name); ?>
       </div>
       <div class="choose_item_text">
-       Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Несколько последний предложения взгляд свой lorem возвращайся.
+       <?php echo esc_html($choose_dovods_text); ?>
       </div>
      </div><!-- /choose_item -->
-     <div class="choose_item">
-      <div class="choose_item_icon">
-       <i class="fa fa-futbol-o" aria-hidden="true"></i>
+        <?php endwhile; ?>
       </div>
-      <div class="choose_item_title">
-       всегда вовремя
-      </div>
-      <div class="choose_item_text">
-       Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Несколько последний предложения взгляд свой lorem возвращайся.
-      </div>
-     </div><!-- /choose_item -->
-     <div class="choose_item">
-      <div class="choose_item_icon">
-       <i class="fa fa-users" aria-hidden="true"></i>
-      </div>
-      <div class="choose_item_title">
-       мы строим качественно
-      </div>
-      <div class="choose_item_text">
-       Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Несколько последний предложения взгляд свой lorem возвращайся.
-      </div>
-     </div><!-- /choose_item -->
-     <div class="choose_item">
-      <div class="choose_item_icon">
-       <i class="fa fa-line-chart" aria-hidden="true"></i>
-      </div>
-      <div class="choose_item_title">
-       мы методичные
-      </div>
-      <div class="choose_item_text">
-       Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Несколько последний предложения взгляд свой lorem возвращайся.
-      </div>
-     </div><!-- /choose_item -->
-    </div>
+
    </div>
+
   </section>
   <section class="block">
    <div class="block_title">наши услуги</div>

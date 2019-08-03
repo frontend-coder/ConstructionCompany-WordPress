@@ -119,18 +119,44 @@ add_action( 'widgets_init', 'construction_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function construction_scripts() {
-	wp_enqueue_style( 'construction-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'construction-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'construction-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	require  get_template_directory() . '/functions/including-style.php';
+require  get_template_directory() . '/functions/asf-options.php';
+
+
+/**
+ * Тестирование :
+<!--
+<?php
+$logotip_site = get_field('vimeo_picture_fon');
+construction_debug($logotip_site);
+?> -->
+*/
+
+
+function construction_debug($data) {
+	echo '<pre>' . print_r ($data, 1) . '</pre>';
 }
-add_action( 'wp_enqueue_scripts', 'construction_scripts' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Implement the Custom Header feature.

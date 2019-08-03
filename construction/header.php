@@ -8,51 +8,132 @@
  *
  * @package construction
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+<head>
+ <meta charset="<?php bloginfo( 'charset' ); ?>" />
+ <!-- <base href="/"> -->
+<!--  <title>Главная страница</title>
+ <meta name="description" content="" /> -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<!--  <link rel="stylesheet" href="css/libs.min.css" /> -->
+      <?php $header_favicon = get_field('header_favicon', 'option');
+        if($header_favicon) :
+          ?>
+
+ <link rel="shortcut icon" href="<?php echo esc_url($header_favicon[url]); ?>" />
+      <?php endif; ?>
 	<?php wp_head(); ?>
 </head>
+<body>
+    	<span class="toggle-button">
+ 		<div class="menu-bar menu-bar-top"></div>
+ 		<div class="menu-bar menu-bar-middle"></div>
+ 		<div class="menu-bar menu-bar-bottom"></div>
+ 	</span>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'construction' ); ?></a>
+ 	<div class="menu-wrap">
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$construction_description = get_bloginfo( 'description', 'display' );
-			if ( $construction_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $construction_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'construction' ); ?></button>
-			<?php
+	<?php
 			wp_nav_menu( array(
+				// [ 'items_wrap' => '%3$s' ],
+				//  [ 'container' => '' ],
+				'container' => 'div',
+				'container_id' => '',
+				'container_class' => 'menu-sidebar',
 				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
+				'menu_id'        => '',
+				'menu_class'          =>  '',
+
 			) );
 			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+ 	</div>
 
-	<div id="content" class="site-content">
+ <!-- Custom HTML -->
+ <header id="header">
+  <div class="top_line_header">
+   <div class="container">
+    <div class="row_person">
+     <ul class="top_contacts">
+
+        <?php $header_phone = get_field('header_phone', 'option');
+        if($header_phone) :
+          ?>
+      <li class="top_contacts_items"> <i class="fa fa-mobile" aria-hidden="true"></i>
+ <a href="tel:<?php echo str_replace(array( " ", "(", ")", "-"), "", $header_phone); ?>">
+ 	<?php echo esc_html($header_phone); ?></a>
+
+   </li>
+     <?php endif; ?>
+
+     <?php $header_email = get_field('header_email', 'option');
+        if($header_email) :
+          ?>
+      <li class="top_contacts_items">
+      	<i class="fa fa-envelope" aria-hidden="true"></i>
+      	<a href="mailto:<?php echo sanitize_email($header_email); ?>"><?php echo sanitize_email($header_email); ?></a>
+      </li>
+     <?php endif; ?>
+	        <?php $header_daywork = get_field('header_daywork', 'option');
+        if($header_daywork) :
+          ?>
+      <li class="top_contacts_items"> <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo esc_html($header_daywork); ?></li>
+  <?php endif; ?>
+     </ul>
+
+     <ul class="top_socials">
+	        <?php while( has_sub_field('header_social_networks', 'option') ):
+          $header_social_networks_icon = get_sub_field('header_social_networks_icon', 'option');
+          $header_social_networks_link = get_sub_field('header_social_networks_link', 'option');
+          ?>
+      <li> <a href="<?php echo esc_url($header_social_networks_link); ?>" target="_blank">
+        <i class="<?php echo esc_html($header_social_networks_icon); ?>" aria-hidden="true"></i></a>
+      </li>
+     <?php endwhile; ?>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <div class="top_line_menu">
+   <div class="container">
+    <div class="row_person row_line_menu">
+        <?php $header_logotype = get_field('header_logotype', 'option');
+        if($header_logotype) :
+          ?>
+     <div class="top_logo">
+      <img src="<?php echo esc_html($header_logotype[url]); ?>" alt="<?php echo esc_html($header_logotype[alt]); ?>">
+     </div>
+       <?php endif; ?>
+
+	<?php
+			wp_nav_menu( array(
+				// [ 'items_wrap' => '%3$s' ],
+				//  [ 'container' => '' ],
+				'container' => 'div',
+				'container_id' => '',
+				'container_class' => 'top_menu',
+				'theme_location' => 'menu-1',
+				'menu_id'        => '',
+				'menu_class'          =>  '',
+
+			) );
+			?>
+
+     <div class='be-search'>
+      <div class="searchbutton">
+      </div>
+      <div class="search-form">
+       <form action="/search" class="searchform" method="get">
+        <input class="searchbar" name="s" placeholder="Введите запрос" type="text" x-webkit-speech="true">
+        <input class="searchsubmit" type="submit" value="Найти">
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+
+  </div>
+ </header><!-- /header -->

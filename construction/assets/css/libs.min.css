@@ -49,7 +49,16 @@ body {
  * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
  */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: -apple-system,
+ BlinkMacSystemFont,
+ 'Segoe UI',
+ Roboto,
+ Helvetica,
+ Arial,
+ sans-serif,
+ 'Apple Color Emoji',
+ 'Segoe UI Emoji',
+ 'Segoe UI Symbol';
 }
 
 /* Grouping content
@@ -3422,6 +3431,17 @@ ul {
   line-height: 1.6;
   font-size: 0.9375rem;
 }
+.top_contacts_items a {
+color: #000000;
+text-decoration: none;
+}
+.top_contacts_items a:hover {
+color: #010101 ;
+text-decoration: underline;
+}
+
+
+
 
 .top_socials {
   display: -webkit-box;
@@ -3731,7 +3751,7 @@ ul {
 }
 
 .menu-sidebar .menu-item-has-children .sub-menu {
-  display: none;
+/*   display: none; */
 }
 
 .sub-menu {
@@ -4096,7 +4116,9 @@ ul {
 }
 
 .wellcome_right_img {
-  background: url("../img/wellcome-under.png") center center no-repeat;
+  /* background: url("../img/wellcome-under.png") center center no-repeat; */
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   width: 520px;
