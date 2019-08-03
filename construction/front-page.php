@@ -145,9 +145,14 @@ get_header();
 
   </section>
   <section class="block">
-   <div class="block_title">наши услуги</div>
+       <?php $service_title = get_field('service_title');
+        if($service_title) :
+          ?>
+   <div class="block_title"><?php echo esc_html($service_title); ?></div>
+<?php endif; ?>
    <div class="container">
     <div class="row_person">
+
      <div class="services_items">
       <div class="services_img">
        <img src="img/services_1.jpg" class="img-responsive" alt="это первый пост">
@@ -158,6 +163,7 @@ get_header();
       </div>
       <a href="#" class="wellcome_link">узнать более</a>
      </div>
+
      <div class="services_items">
       <div class="services_img">
        <img src="img/services_2.jpg" class="img-responsive" alt="это первый пост">
@@ -181,13 +187,25 @@ get_header();
     </div>
    </div>
   </section>
-  <section class="reviews_fon" style="background-image: url('img/reviews-fon.jpg');">
+       <?php $reviews_fon = get_field('reviews_fon');
+        if($reviews_fon) :
+          ?>
+  <section class="reviews_fon" style="background-image: url('<?php echo esc_url($reviews_fon[url]); ?>');">
    <div class="container">
     <div class="row">
-     <div class="block_title">отзывы клиентом</div>
-     <div class="block_descr"> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Которой на берегу даже несколько, гор пор собрал себя предложения родного! Рукописи пунктуация это дал повстречался подпоясал, одна текст правилами рукопись инициал текста до продолжил взобравшись использовало, сих, но оксмокс свой.
+       <?php $adwice_title = get_field('adwice_title');
+        if($adwice_title) :
+          ?>
+     <div class="block_title"><?php echo esc_html($adwice_title); ?></div>
+<?php endif; ?>
+       <?php $adwice_descr = get_field('adwice_descr');
+        if($adwice_descr) :
+          ?>
+     <div class="block_descr"><?php echo esc_html($adwice_descr); ?>
      </div>
+     <?php endif; ?>
      <div class="reviews_block">
+
       <div class="reviews_block_items">
        <div class="reviews_block_content">
         Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Щеке если приставка страну, большого, образ подзаголовок. Своего безопасную жизни прямо, строчка сбить она проектах запятых силуэт от всех, даже, семь?
@@ -222,29 +240,24 @@ get_header();
     </div>
    </div>
   </section>
+    <?php endif; ?>
   <section class="form_block">
    <div class="container">
     <div class="row_person">
      <div class="form_block_items">
-      <h3>Возникли вопросы?
-       <span>напишите нам сейчас!</span>
+       <?php $have_q = get_field('have_q');
+        if($have_q) :
+          ?>
+      <h3><?php echo ($have_q); ?>
       </h3>
+     <?php endif; ?>
      </div>
      <div class="form_block_items">
-      <form class="contact_form_bottom">
-       <div class="contact_form_item">
-        <input class="contact_form_input" type="text" name="name" placeholder="Имя" required="required">
-       </div>
-       <div class="contact_form_item">
-        <input class="contact_form_input" type="text" name="email" placeholder="Email" required="required">
-       </div>
-       <div class="contact_form_item">
-        <textarea class="contact_form_textarea" name="textarea" placeholder="Сообщение" required="required"></textarea>
-       </div>
-       <div class="contact_form_item">
-        <input class="get-buttons" name="submit" type="submit" id="submits" value="Отправить">
-       </div>
-      </form>
+<?
+ if(get_field('front_page_contact_form')) :
+$shotcode_fos = get_field('front_page_contact_form');
+ echo do_shortcode($shotcode_fos);
+ endif; ?>
      </div>
     </div>
    </div>
