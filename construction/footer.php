@@ -20,7 +20,8 @@
     <div class="row">
      <div class="footer_top">
       <div class="footer_top_one">
-       <h3>о компании</h3>
+
+       <h3 class="footer_title">о компании</h3>
         <?php $header_logotype = get_field('header_logotype', 'option');
         if($header_logotype) :
           ?>
@@ -31,6 +32,14 @@
        <div class="footer_bottom_text">
         Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Щеке если приставка страну, большого.
        </div>
+
+<?php if ( !is_active_sidebar( 'footer-1' ) )
+   { echo "Активируйте виджеты"; }
+   else {
+   dynamic_sidebar( 'footer-1' );
+   }
+?>
+
        <ul class="footer_bottom_social">
 	        <?php while( has_sub_field('header_social_networks', 'option') ):
           $header_social_networks_icon = get_sub_field('header_social_networks_icon', 'option');
@@ -42,19 +51,42 @@
         </li>
      <?php endwhile; ?>
        </ul>
+
+
+
+
+
+
       </div>
       <div class="footer_top_two">
-       <h3>страницы</h3>
-       <ul class="footer_pages_links">
+
+     <?php if ( !is_active_sidebar( 'footer-2' ) )
+                    { echo "Активируйте виджеты"; }
+                    else {
+                      dynamic_sidebar( 'footer-2' );
+                    }
+                     ?>
+<!--         <div class="footer_widget widget">
+       <h3 class="footer_title">страницы</h3>
+       <ul>
         <li> <a href="#">Наши услуги</a> </li>
         <li> <a href="#">Наша команда</a> </li>
         <li> <a href="#">Тех поддержка</a> </li>
         <li> <a href="#">Политика приватности</a> </li>
         <li> <a href="#">Карта сайта</a> </li>
        </ul>
+       </div> -->
       </div>
       <div class="footer_top_three">
-       <h3>новые посты</h3>
+
+<?php if ( !is_active_sidebar( 'footer-3' ) )
+                    { echo "Активируйте виджеты"; }
+                    else {
+                      dynamic_sidebar( 'footer-3' );
+                    }
+                     ?>
+
+       <!-- <h3>новые посты</h3>
        <ul class="footer_latest_post">
         <li class="clearfix">
          <span class="footer_post_wrap">
@@ -77,10 +109,21 @@
          </span>
          <a href="#"> Далеко-далеко за </a>
         </li>
-       </ul>
+       </ul> -->
+
+
+
+
       </div>
       <div class="footer_top_foure">
-       <h3>наши контакты</h3>
+<?php if ( !is_active_sidebar( 'footer-4' ) )
+                    { echo "Активируйте виджеты"; }
+                    else {
+                      dynamic_sidebar( 'footer-4' );
+                    }
+                     ?>
+
+   <!--     <h3>наши контакты</h3>
        <ul class="footer_contacts">
         <li> <span> 123 Новая линия, Москва, Россия</span> </li>
         <li> <a href="mailto:joe@example.com">hello@exsemple.com</a></li>
@@ -88,7 +131,9 @@
          <a href="tell:+3433434344">+3433434344</a>
          <a href="tell:+3433434344">+3433434344</a>
         </li>
-       </ul>
+       </ul> -->
+
+
       </div>
      </div>
     </div>

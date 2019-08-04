@@ -4389,12 +4389,45 @@ ul {
   width: 40%;
 }
 
-.footer_top h3 {
-  text-align: left;
+
+/* оформление виджетов для подвала   */
+.footer_title {
+   text-align: left;
   text-transform: capitalize;
   font-weight: 300;
   margin-bottom: 40px;
+  margin-left: 24px;
 }
+.footer_widget {
+  margin-bottom: 20px;
+}
+.footer_widget ul {
+  padding-left: 24px;
+}
+
+.footer_widget ul li a {
+    font-size: 0.9375rem;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    font-family: "OpenSansLight", sans-serif;
+}
+
+.footer_widget ul li a:before {
+    top: 0;
+    left: -14px;
+    font-size: 0.9375rem;
+    position: absolute;
+    content: '\f0da';
+    color: #fff;
+    font-weight: 900;
+    font-family: "FontAwesome";
+  }
+
+
+
+
+
 
 .bottom_logo {
   margin-bottom: 15px;
