@@ -1,3 +1,9 @@
-<div class="contact_form_bottom"><div class="contact_form_item">[text* text-72 class:contact_form_input placeholder"Имя"]</div><div class="contact_form_item">[email* email-4 class:contact_form_input placeholder "Email"]</div><div class="contact_form_item">[textarea* textarea-92 class:contact_form_textarea placeholder "Сообщение"]</div><div class="contact_form_item">[submit id:submits class:get-buttons "Отправить"]</div></div>
+﻿<div class="contact_form_bottom"><div class="contact_form_item">[text* text-72 class:contact_form_input placeholder"Имя"]</div><div class="contact_form_item">[email* email-4 class:contact_form_input placeholder "Email"]</div><div class="contact_form_item">[textarea* textarea-92 class:contact_form_textarea placeholder "Сообщение"]</div><div class="contact_form_item">[submit id:submits class:get-buttons "Отправить"]</div></div>
 
 
+Имя       [text-72]
+Email     [email-4]
+Сообщение [textarea-92]
+
+-- 
+Это сообщение отправлено с сайта construction (http://construction.local)
