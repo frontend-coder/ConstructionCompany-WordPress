@@ -1,0 +1,31 @@
+﻿<div><h2 class="rezult_block_title">ваш результат готов</h2><div class="rezult_block_descr">Вы выбрали:</div><ul class="rezult_list"><li>длина бассейна <span id="dlina_out">1</span> м</li>[hidden dlina_out_cf id:dlina_out_cf class:dlina_out_cf]<li>ширина бассейна <span id="shirina_out">1</span> м,</li>[hidden shirina_out_cf id:shirina_out_cf class:shirina_out_cf]<li>минимальная глубина бассейна <span id="glubmin_out">1</span> м,</li>[hidden glubmin_out_cf id:glubmin_out_cf class:glubmin_out_cf]<li>максимальная глубина бассейна <span id="shirinamax_out">1</span> м,</li>[hidden shirinamax_out_cf id:shirinamax_out_cf class:shirinamax_out_cf]<li>тип бассейна <span id="typebus_out">скимерный</span></li>[hidden typebus_out_cf id:typebus_out_cf class:typebus_out_cf]<li>форма бассейна <span id="formbus_out">круглая</span></li>[hidden formbus_out_cf id:formbus_out_cf class:formbus_out_cf]<li>переход глубины:<span id="perbusbass_out">нет</span></li>[hidden perbusbass_out_cf id:perbusbass_out_cf class:perbusbass_out_cf]<li> бассейн должен быть <span id="betonlesnicha_out">бетонной лестницей</span></li>[hidden betonlesnicha_out_cf id:betonlesnicha_out_cf class:betonlesnicha_out_cf]<li> бассейн должен быть <span id="nerglesnicha_out">без лестницы из нержавейки</span></li>[hidden nerglesnicha_out_cf id:nerglesnicha_out_cf class:nerglesnicha_out_cf]<li> бассейн должен быть <span id="filtrasia_out">системой фильтрацией</span></li>[hidden filtrasia_out_cf id:filtrasia_out_cf class:filtrasia_out_cf]<li> бассейн должен быть <span id="podogrevvody_out">подогревом воды</span></li>[hidden podogrevvody_out_cf id:podogrevvody_out_cf class:podogrevvody_out_cf]<li>бассейн должен быть <span id="protivotokvody_out">противотоком</span></li>[hidden protivotokvody_out_cf id:protivotokvody_out_cf class:protivotokvody_out_cf]<li>бассейн должен быть <span id="gidro_out">гидромассажем</span></li>[hidden gidro_out_cf id:gidro_out_cf class:gidro_out_cf]<li> бассейн должен быть <span id="podvpodsvetka_out">подводным освещением</span></li>[hidden podvpodsvetka_out_cf id:podvpodsvetka_out_cf class:podvpodsvetka_out_cf]<li>бассейн должен быть <span id="ozonobrabotka_out">озоновой обработкой воды</span></li>[hidden ozonobrabotka_out_cf id:ozonobrabotka_out_cf class:ozonobrabotka_out_cf]<li>бассейн должен быть <span id="vodopad_out">водопадом</span></li>[hidden vodopad_out_cf id:vodopad_out_cf class:vodopad_out_cf]<li>бассейн должен быть <span id="aero_out">аэромассажем</span></li>[hidden aero_out_cf id:aero_out_cf class:aero_out_cf]<li> бассейн должен быть <span id="oblichovka_out">плиткой</span></li>[hidden oblichovka_out_cf id:oblichovka_out_cf class:oblichovka_out_cf]</ul><div class="rezult_block_green" id="final_caundoun"><div class="rezult_block_green_title">Предварительная стоимость вашего бассейна</div><div class="rezult_block_green_cost"><span id="costing_proect3"> 100 000</span> руб</div>[hidden costing_proect3_cf id:costing_proect3_cf class:costing_proect3_cf]<input id="costing_peredat" type="hidden" name="costing_peredat" value=""><div class="rezult_block_green_text">Внимание! Данная цена может изменится при выезде инженера и уточнения всех нюансов</div></div><div class="result_calcul_wraper">[text* text-442 id:author_popup class:calcul_order placeholder "Ваше имя" ][tel* tel-473 id:phone_calcul class:calcul_order class:calcul_order_ziro placeholder "Ваш телефон"][submit class:calcul_button "Оставить заявку на бесплатную консультацию"]</div><div class="checkbox_box"><label for="phone_headeroption" class="css-label checkbox-transform"><input id="phone_headeroption" class="css-checkbox checkbox__input" type="checkbox"/><span class="checkbox__label">Я даю согласие на обработку своих персональных данных и ознакомлен с <a href="#">политикой конфиденциальности</a></span></label><div class="our_spech">Наш специалист бесплатно ответит на все ваши вопросы или же совершит выезд на объект для проведения всех необходимых замеров и уточнений.</div></div>[hidden phone_headeroption_cf id:phone_headeroption_cf class:phone_headeroption_cf]</div>
+
+
+Текст письма
+
+
+Длина бассейна:                  [dlina_out_cf]
+Ширина бассейна:                 [shirina_out_cf]
+Минимальная глубина бассейна :   [glubmin_out_cf]
+Максимальная глубина бассейна:   [shirinamax_out_cf]
+Тип бассейна:                    [typebus_out_cf]
+Форма бассейна:                  [formbus_out_cf]
+Переход глубины бассейна:        [perbusbass_out_cf]
+Нужна ли бетонная лестница:      [betonlesnicha_out_cf]
+Нужна ли лестница из нержавейки: [nerglesnicha_out_cf]
+Бассейн будет оборудован:        [filtrasia_out_cf]
+Бассейн будет оборудован:        [podogrevvody_out_cf]
+Бассейн будет оборудован:        [protivotokvody_out_cf]
+Бассейн будет оборудован:        [gidro_out_cf]
+Бассейн будет оборудован:        [podvpodsvetka_out_cf]
+Бассейн будет оборудован:        [ozonobrabotka_out_cf]
+Бассейн будет оборудован:        [vodopad_out_cf]
+Бассейн будет оборудован:        [aero_out_cf]
+Бассейн будет оборудован:        [oblichovka_out_cf]
+Предложенная стоимость:          [costing_proect3_cf]
+Согласие на обработку:           [phone_headeroption_cf]
+
+Имя заказчика :[text-442]
+Номер телефона :[tel-473]
+-- 
+Это сообщение отправлено с сайта construction (http://construction.local)

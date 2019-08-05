@@ -10,51 +10,52 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+ <?php $eror_header_fon = get_field('404_header_fon', 'option');
+  if($eror_header_fon) :
+    ?>
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'construction' ); ?></h1>
-				</header><!-- .page-header -->
+    <section class="header_buner" style="background-image: url('<?php echo esc_url($eror_header_fon[url]); ?>');">
+     <div class="container">
+      <div class="row">
+       <div class="header_buner_inn">
+        <div class="header_buner_container">
+          <?php $eror_header_pred = get_field('404_header_pred', 'option');
+          if($eror_header_pred) :
+            ?>
+            <h2> <?php echo esc_html($eror_header_pred); ?> </h2>
+          <?php endif; ?>
+          <?php $eror_header_utp = get_field('404_header_utp', 'option');
+          if($eror_header_utp) :
+            ?>
+            <h1> <?php echo $eror_header_utp; ?> </h1>
+          <?php endif; ?>
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'construction' ); ?></p>
+          <?php $eror_header_desc = get_field('404_header_desc', 'option');
+          if($eror_header_desc) :
+            ?>
+            <h3> <?php echo esc_html($eror_header_desc); ?> </h3>
+          <?php endif; ?>
 
-					<?php
-					get_search_form();
+          <div class="header_buner_buttons">
+           <?php $eror_header_button_one = get_field('404_header_button_one', 'option');
+           if($eror_header_button_one) :
+            ?>
+            <a href="<?php echo $eror_header_button_one[url]; ?>" title="<?php echo $eror_header_button_one[title]; ?>" class="wellcome_link">узнать более</a>
+          <?php endif; ?>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+          <?php $eror_header_button_two = get_field('404_header_button_two', 'option');
+          if($eror_header_button_two) :
+            ?>
+            <a href="<?php echo $eror_header_button_two[url]; ?>" title="<?php echo $eror_header_button_two[title]; ?>"class="wellcome_link">больше о проекте</a>
+          <?php endif; ?>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'construction' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$construction_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'construction' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$construction_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<?php endif; ?>
 
 <?php
 get_footer();

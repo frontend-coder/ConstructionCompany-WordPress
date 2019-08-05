@@ -153,31 +153,36 @@
 
 
 <?php
-
-      $price_plika = get_field('price_plika');
-      $price_mozaika = get_field('price_mozaika');
-      $price_poliprop = get_field('price_poliprop');
-
-      $price_metalstairs = get_field('price_metalstairs');
-      $price_betonstairs = get_field('price_betonstairs');
-      $price_filtration = get_field('price_filtration');
-
-
+    $price_plika       = get_field('price_plika');
+    $price_mozaika     = get_field('price_mozaika');
+    $price_poliprop    = get_field('price_poliprop');
+    $price_metalstairs = get_field('price_metalstairs');
+    $price_betonstairs = get_field('price_betonstairs');
+    $price_filtration  = get_field('price_filtration');
+    $price_podogrev    = get_field('price_podogrev');
+    $price_protivotok  = get_field('price_protivotok');
+    $price_gidromasage = get_field('price_gidromasage');
+    $price_podsvetky   = get_field('price_podsvetky');
+    $price_ozonset     = get_field('price_ozonset');
+    $price_vodopad     = get_field('price_vodopad');
+    $price_aeromassage = get_field('price_aeromassage');
  ?>
 
-
-
  <script type="text/javascript">
- var costPlitka = "<?php echo $price_plika; ?>";
- var costMozaila = "<?php echo $price_mozaika; ?>";
- var costPolipr =  "<?php echo $price_poliprop; ?>";
 
- var costMetalStairs =  Number("<?php echo $price_metalstairs; ?>");
- var costBetonStairs = Number("<?php echo $price_betonstairs; ?>");
- var priceFiltration = Number("<?php echo $price_filtration; ?>");
-
-
-
+var costPlitka       = "<?php echo $price_plika; ?>";
+var costMozaila      = "<?php echo $price_mozaika; ?>";
+var costPolipr       = "<?php echo $price_poliprop; ?>";
+var costMetalStairs  = Number("<?php echo $price_metalstairs; ?>");
+var costBetonStairs  = Number("<?php echo $price_betonstairs; ?>");
+var priceFiltration  = Number("<?php echo $price_filtration; ?>");
+var pricePodogrev    = Number("<?php echo $price_podogrev; ?>");
+var priceProtivotok  = Number("<?php echo $price_protivotok; ?>");
+var priceGidroMasage = Number("<?php echo $price_gidromasage; ?>");
+var pricePodsvetky   = Number("<?php echo $price_podsvetky; ?>");
+var priceOzonset     = Number("<?php echo $price_ozonset; ?>");
+var priceVodopad     = Number("<?php echo $price_vodopad; ?>");
+var priceAeroMassage = Number("<?php echo $price_aeromassage; ?>");
 
 
  $('html').on('change', function() {
@@ -190,14 +195,12 @@
   document.getElementById("dlina_out").innerHTML = dlinaPool;
 $("#dlina_out_cf").val(dlinaPool);
 
-
   var shirinaPool = document.getElementById("shirina_pool").value;
   if (shirinaPool == "") {
    shirinaPool = 1;
   }
   document.getElementById("shirina_out").innerHTML = shirinaPool;
   $("#shirina_out_cf").val(shirinaPool);
-
 
   var glubMinPool = document.getElementById("glubmin_pool").value;
   if (glubMinPool == "") {
@@ -211,12 +214,6 @@ $("#dlina_out_cf").val(dlinaPool);
   }
   document.getElementById("shirinamax_out").innerHTML = glubMaxPool;
   $("#shirinamax_out_cf").val(glubMaxPool);
-
-
-
-
-
-
 
   let radios = 'нет';
   radios = document.getElementsByName("perehodglubiny");
@@ -273,7 +270,6 @@ $("#dlina_out_cf").val(dlinaPool);
     document.getElementById("oblichovka_out").innerHTML = oblichovka;
     $("#oblichovka_out_cf").val(oblichovka);
 
-
    if (oblichovka === 'плитка') {
      otdelkaPoolCost = costPlitka;
     } else if (oblichovka === 'мозайка') {
@@ -281,8 +277,6 @@ $("#dlina_out_cf").val(dlinaPool);
     } else if (oblichovka === 'полипропилен') {
      otdelkaPoolCost = costPolipr;
     }
-
- //   document.getElementById("oblichovkacost_out").innerHTML = otdelkaPoolCost;
    }
   }
   // вывод текста с бетонной и нержавеющей лесниц
@@ -305,9 +299,6 @@ nergaveikaLwsnichaInput = document.getElementById('nergaveka');
     $("#nerglesnicha_out_cf").val(nergaveikaLwsnichaOutput);
    nergaveikaLwsnichaPrice = 0;
   }
-console.log(nergaveikaLwsnichaPrice);
-
-
 
   let betonLwsnichaInput;
   let betonLwsnichaOutput;
@@ -319,15 +310,13 @@ console.log(nergaveikaLwsnichaPrice);
    document.getElementById("betonlesnicha_out").innerHTML = betonLwsnichaOutput;
      $("#betonlesnicha_out_cf").val(betonLwsnichaOutput);
    var betonLwsnichaPrice = costBetonStairs;
-  // document.getElementById("betonlesnichaprice_out").innerHTML = betonLwsnichaPrice;
   } else {
    betonLwsnichaOutput = 'без бетонной лесницы';
    document.getElementById("betonlesnicha_out").innerHTML = betonLwsnichaOutput;
     $("#betonlesnicha_out_cf").val(betonLwsnichaOutput);
    betonLwsnichaPrice = 0;
-//   document.getElementById("betonlesnichaprice_out").innerHTML = betonLwsnichaPrice;
   }
-console.log(betonLwsnichaPrice);
+
   // вывод текста ФИЛЬТРАЦИЕЙ
   let filtrasiaVodyPool;
   let filtrasiaVodyPoolOutput;
@@ -342,7 +331,6 @@ console.log(betonLwsnichaPrice);
   };
   document.getElementById("filtrasia_out").innerHTML = filtrasiaVodyPoolOutput;
      $("#filtrasia_out_cf").val(filtrasiaVodyPoolOutput);
- // document.getElementById("filtrasiacost_out").innerHTML = filtrasiaPoolCost;
 
   // вывод текста ПОДОГРЕВ
   let podogrevVodyPool;
@@ -351,14 +339,13 @@ console.log(betonLwsnichaPrice);
   podogrevVodyPool = document.getElementById('podogravpool');
   if (podogrevVodyPool.checked) {
    podogrevVodyPoolOutput = 'подогрев воды бассейна';
-   PodogrevPoolCost = 11897;
+   PodogrevPoolCost = pricePodogrev;
   } else {
    podogrevVodyPoolOutput = 'без подогрева воды бассейна';
    PodogrevPoolCost = 0;
   };
   document.getElementById("podogrevvody_out").innerHTML = podogrevVodyPoolOutput;
   $("#podogrevvody_out_cf").val(podogrevVodyPoolOutput);
-  //document.getElementById("podogrevvodycost_out").innerHTML = PodogrevPoolCost;
 
   // вывод текста ПРОТИВОТОК
   let protivotokVodyPool;
@@ -367,14 +354,13 @@ console.log(betonLwsnichaPrice);
   protivotokVodyPool = document.getElementById('protivotok');
   if (protivotokVodyPool.checked) {
    protivotokVodyPoolOutput = 'противотоком воды бассейна';
-   protivotokVodyPoolCost = 10000;
+   protivotokVodyPoolCost = priceProtivotok;
   } else {
    protivotokVodyPoolOutput = 'без противотока воды бассейна';
    protivotokVodyPoolCost = 0;
   };
   document.getElementById("protivotokvody_out").innerHTML = protivotokVodyPoolOutput;
    $("#protivotokvody_out_cf").val(protivotokVodyPoolOutput);
-  //document.getElementById("protivotokvodycost_out").innerHTML = protivotokVodyPoolCost;
 
   // вывод текста ГИДРОМАСАЖ
   let gidromasagePool;
@@ -383,14 +369,13 @@ console.log(betonLwsnichaPrice);
   gidromasagePool = document.getElementById('gidromassage');
   if (gidromasagePool.checked) {
    gidromasagePoolOutput = 'гидромассажем';
-   gidromasagePoolCost = 5000;
+   gidromasagePoolCost = priceGidroMasage;
   } else {
    gidromasagePoolOutput = 'без гидромассажа';
    gidromasagePoolCost = 0;
   };
   document.getElementById("gidro_out").innerHTML = gidromasagePoolOutput;
   $("#gidro_out_cf").val(gidromasagePoolOutput);
-  //document.getElementById("gidrocost_out").innerHTML = gidromasagePoolCost;
 
   // вывод текста ПОДСВЕТКА
   let podvpodsvetkaPool;
@@ -399,14 +384,13 @@ console.log(betonLwsnichaPrice);
   podvpodsvetkaPool = document.getElementById('podsvetka');
   if (podvpodsvetkaPool.checked) {
    podvpodsvetkaPoolOutput = 'подводной подсветкой воды';
-   podvpodsvetkaPoolCost = 5000;
+   podvpodsvetkaPoolCost = pricePodsvetky;
   } else {
    podvpodsvetkaPoolOutput = 'без подводной подсветкой воды';
    podvpodsvetkaPoolCost = 0;
   };
   document.getElementById("podvpodsvetka_out").innerHTML = podvpodsvetkaPoolOutput;
   $("#podvpodsvetka_out_cf").val(podvpodsvetkaPoolOutput);
- // document.getElementById("podvpodsvetkacost_out").innerHTML = podvpodsvetkaPoolCost;
 
   // вывод текста ОЗОНОВОЙ ОБРАБОТКОЙ ВОДЫ
   let ozonovaObrabotkaPool;
@@ -415,14 +399,13 @@ console.log(betonLwsnichaPrice);
   ozonovaObrabotkaPool = document.getElementById('obrabotkawather');
   if (ozonovaObrabotkaPool.checked) {
    ozonovaObrabotkaPoolOutput = 'озоновой обработкой воды';
-   ozonovaObrabotkaPoolCost = 8547;
+   ozonovaObrabotkaPoolCost = priceOzonset;
   } else {
    ozonovaObrabotkaPoolOutput = 'без озоновой обработкой воды';
    ozonovaObrabotkaPoolCost = 0;
   };
   document.getElementById("ozonobrabotka_out").innerHTML = ozonovaObrabotkaPoolOutput;
   $("#ozonobrabotka_out_cf").val(ozonovaObrabotkaPoolOutput);
-//  document.getElementById("ozonobrabotkacost_out").innerHTML = ozonovaObrabotkaPoolCost;
 
   // вывод текста ВОДОПАДОМ
   let vodopadPool;
@@ -431,14 +414,13 @@ console.log(betonLwsnichaPrice);
   vodopadPool = document.getElementById('vodopad');
   if (vodopadPool.checked) {
    vodopadPoolOutput = 'водопадом бассейна';
-   vodopadPoolCost = 15580;
+   vodopadPoolCost = priceVodopad;
   } else {
    vodopadPoolOutput = 'без водопада бассейна';
    vodopadPoolCost = 0;
   };
   document.getElementById("vodopad_out").innerHTML = vodopadPoolOutput;
     $("#vodopad_out_cf").val(vodopadPoolOutput);
-//  document.getElementById("vodopadcost_out").innerHTML = vodopadPoolCost;
 
   // вывод текста ФЭРОМАССЖЕМ
   let aeromasagePool;
@@ -447,31 +429,59 @@ console.log(betonLwsnichaPrice);
   aeromasagePool = document.getElementById('aeromasage');
   if (aeromasagePool.checked) {
    aeromasagePoolOutput = 'аэромассажем';
-   aeromasagePoolCost = 15580;
+   aeromasagePoolCost = priceAeroMassage;
   } else {
    aeromasagePoolOutput = 'без аэромассажа';
    aeromasagePoolCost = 0;
   };
   document.getElementById("aero_out").innerHTML = aeromasagePoolOutput;
    $("#aero_out_cf").val(aeromasagePoolOutput);
- // document.getElementById("aerocost_out").innerHTML = aeromasagePoolCost;
-
 
   let perimetrPoolCost = (otdelkaPoolCost * ((((2 * (glubMinPool * dlinaPool)) + (2 * (glubMinPool * shirinaPool)) + (dlinaPool * shirinaPool)) * skimernyIndex) * formaBaseins));
+
+
+
+
+
+// вывод согласия на обработку данных
+  let agreeObrabotka;
+  let agreeObrabotkaAnswear;
+  agreeObrabotka = document.getElementById('phone_headeroption');
+  if (agreeObrabotka.checked) {
+   agreeObrabotkaAnswear = 'согласен/а';
+  } else {
+ agreeObrabotkaAnswear = 'не согласен/а';
+  };
+ // document.getElementById("ozonobrabotka_out").innerHTML = ozonovaObrabotkaPoolOutput;
+  $("#phone_headeroption_cf").val(agreeObrabotkaAnswear);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  // let perimetrPoolCost = perimetrPool * otdelkaPoolCost;
 
   // let costDopolOborudovania = nergaveikaLwsnichaPrice + betonLwsnichaPrice + filtrasiaPoolCost + PodogrevPoolCost + protivotokVodyPoolCost + gidromasagePoolCost + podvpodsvetkaPoolCost + ozonovaObrabotkaPoolCost + vodopadPoolCost + aeromasagePoolCost;
 
-  // let allResultPrice = perimetrPoolCost + costDopolOborudovania;
-//let allResultPrice = perimetrPoolCost + (nergaveikaLwsnichaPrice + betonLwsnichaPrice);
-let allResultPrice = perimetrPoolCost + (nergaveikaLwsnichaPrice + betonLwsnichaPrice + filtrasiaPoolCost);
-
-
+let allResultPrice = perimetrPoolCost + (nergaveikaLwsnichaPrice + betonLwsnichaPrice + filtrasiaPoolCost + PodogrevPoolCost + protivotokVodyPoolCost + gidromasagePoolCost + podvpodsvetkaPoolCost + ozonovaObrabotkaPoolCost + vodopadPoolCost + aeromasagePoolCost );
   allResultPrice = Math.ceil(allResultPrice);
   allResultPrice = allResultPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   document.getElementById("costing_proect3").innerHTML = allResultPrice;
-
+$("#costing_proect3_cf").val(allResultPrice);
  });
  </script>
 
@@ -525,16 +535,5 @@ function onInput(ek) {
   }
 }
 </script>
-
-
-
-
-
-
-
-
-
-
 </body>
-
 </html>
