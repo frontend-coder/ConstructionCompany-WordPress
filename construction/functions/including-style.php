@@ -3,8 +3,19 @@
 
 function construction_scripts() {
 	wp_enqueue_style( 'construction-style', get_stylesheet_uri() );
-wp_enqueue_style( 'construction-libsmincsss', get_template_directory_uri() . '/assets/css/libs.min.css');
+
+
+if ( is_front_page() ) {
+ 	wp_enqueue_style( 'construction-libsmincsss', get_template_directory_uri() . '/assets/css/libs.min.css');
+ }
+
+
+if ( !is_front_page() ) {
 wp_enqueue_style( 'construction-calculatemincss', get_template_directory_uri() . '/assets/css/calculate.min.css');
+ }
+
+
+
 
 
 	wp_deregister_script( 'jquery');

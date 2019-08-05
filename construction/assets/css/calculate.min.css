@@ -3426,6 +3426,17 @@ ul {
   padding-right: 30px;
   white-space: nowrap;
 }
+.top_contacts_items a {
+    color: #000000;
+    text-decoration: none;
+      -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  }
+.top_contacts_items a:hover {
+    color: #010101;
+    text-decoration: underline;
+  }
 
 .top_contacts_items .fa {
   line-height: 1.6;
@@ -3452,9 +3463,6 @@ ul {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
   position: relative;
-  -webkit-transition: all 0.7s ease;
-  -o-transition: all 0.7s ease;
-  transition: all 0.7s ease;
 }
 
 .row_line_menu {
@@ -3622,11 +3630,17 @@ ul {
   font-size: 0.75rem;
   line-height: 1.33333;
   text-transform: uppercase;
+    -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .top_menu ul li ul li a:hover {
   color: #222533;
   background-color: #ffcb0f;
+    -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .menu-item-has-children a:after,
@@ -3669,6 +3683,7 @@ ul {
 
 .top_menu ul li a:hover {
   color: #ffffff;
+
 }
 
 .menu-wrap {
@@ -3753,6 +3768,9 @@ ul {
   padding: 10px;
   color: #FFFA3B;
   position: relative;
+    -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .sidebar-menu-arrow:hover::after {
@@ -4992,7 +5010,7 @@ display: none;
 .c-head {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #cfd3d5;
+/*   color: #cfd3d5; */
   padding: 10px 20px;
   margin-bottom: 15px;
   background: #cfd3d5;
@@ -5035,11 +5053,15 @@ display: none;
   text-align: right;
   list-style: none;
 }
-
+.commentlist ul.children,
 #comments ul.children {
   width: 90%;
   display: inline-block;
   list-style: none;
+}
+.comment-author-construction .c-head {
+    background:#ffcb0f;
+
 }
 
 .comment-content-box {
@@ -5132,6 +5154,12 @@ display: none;
   color: #666;
   background: #cfd3d5;
   text-align: right;
+}
+#respond a {
+color: #000;
+}
+#respond .cancel-comment-reply {
+  margin-left: 10px;
 }
 
 form#commentform, p.logged-in {
@@ -5226,5 +5254,3 @@ label.comment-field {
   background-color: red !important;
   color: #666;
 }
-
-/*# sourceMappingURL=calculate.min.css.map */

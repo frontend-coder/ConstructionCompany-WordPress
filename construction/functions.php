@@ -110,6 +110,8 @@ require  get_template_directory() . '/functions/function-pagination.php' ;
 require  get_template_directory() . '/functions/custom-thamb.php' ;
 require  get_template_directory() . '/functions/custom-type.php' ;
 require  get_template_directory() . '/functions/including-widget.php' ;
+require  get_template_directory() . '/functions/comments_forms.php' ;
+
 
 
 /**

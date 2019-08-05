@@ -278,6 +278,7 @@ wp_reset_postdata(); // сброс
 </div>
 </section>
 </main>
+222
 <?php
 get_footer();
 ?>
